@@ -1,0 +1,25 @@
+{% extends 'noticias/index.html' %} 
+
+
+{% load static %}
+
+{% block title %}
+Listado 
+{% endblock %} 
+
+{% block content %}
+
+<h1>Noticias</h1>
+
+{% for noticia in noticias %}
+
+<div class="card rounded-0 mt-3" style="width: 10rem">
+  <div class="card-body">
+    <h5 class="card-title">{{noticia.title}}</h5>
+    Autor: {{noticia.author}}, contenido: {{noticia.content}}. Publicado el
+    {{noticia.published_at}}
+  </div>
+</div>
+{% endfor %} 
+
+{% endblock %}
